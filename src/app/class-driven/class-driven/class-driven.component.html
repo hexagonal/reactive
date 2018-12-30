@@ -1,0 +1,21 @@
+<table [formGroup]="premium">
+    <tr>
+        <td>Base</td>
+        <td><input type="text" formControlName="base" (blur)="updateForm()"></td>
+        <td><input type="text" formControlName="baseTax" (blur)="updateForm()"></td>
+        <td>{{ model.baseTotal | hexCurrency }}</td>
+    </tr>
+    <tr>
+        <td>Fire</td>
+        <td><input type="text" formControlName="fire" (blur)="updateForm()"></td>
+        <td><input type="text" formControlName="fireTax" (blur)="updateForm()"></td>
+        <td>{{ model.fireTotal | hexCurrency }}</td>
+    </tr>
+    <tr>
+        <td>Premium</td>
+        <td>{{ model.premium | hexCurrency }}</td>
+        <td>{{ model.premiumTax | hexCurrency }}</td>
+        <td>{{ model.premiumTotal | hexCurrency }}</td>
+    </tr>
+</table>
+<button (click)="save()">Save</button>
